@@ -1,19 +1,14 @@
-# This is workflow name
+---
 name: Hello
-
-#run on a trigger
 on:
-    push:
-        branches: [main]
-# these are jobs inside the workflow
+  push:
+    branches:
+      - main
 jobs:
-    greet:
-        # this is github runner, each job runs on a runner
-        runs-on: ubuntu-latest
-        steps:
-            - name: say hello to user
-              run: echo "Hello World"
-
-            - name: say hellp to username
-              run: echo"Hello $USER"
-              
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: say hello to user
+        run: echo "Hello World"
+      - name: say hellp to username
+        run: echo"Hello $USER"
