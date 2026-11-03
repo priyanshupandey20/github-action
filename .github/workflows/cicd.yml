@@ -1,0 +1,23 @@
+name: CICD
+
+on:
+    workflow_dispatch:
+
+jobs:
+    code:
+        steps:
+            - name: checkout code
+              run: echo "Clone the code from the github"
+    build:
+        steps:
+            - name: Build the Dockder Container
+              run: echo "Docker continer build"
+    test:
+        steps:
+            - name: Test the container
+              run: echo "Testing"
+    deploy:
+        steps:
+            - name: Deploy the code
+              run: echo "Deploy successfully" 
+    
