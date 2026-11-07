@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Priyanshu Pandey — Cloud and DevOps learner, AWS practitioner, and web developer. Explore projects, skills, and experience.">
+  <meta name="keywords" content="Priyanshu Pandey, Cloud Engineer, DevOps, AWS, Linux, Docker, Kubernetes, PHP, MySQL">
+  <meta name="author" content="Priyanshu Pandey">
+  <title>Priyanshu Pandey | Cloud & DevOps Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          ink: '#0b1220', panel: '#111c2e', line: '#26364d',
+          accent: '#60a5fa', accent2: '#a78bfa', muted: '#9aabc1'
+        },
+        boxShadow: { glow: '0 0 45px rgba(96,165,250,.14)' }
+      }}
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #0b1220; color: #e8eef7; }
+    .grid-bg {
+      background-image: linear-gradient(rgba(148,163,184,.055) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(148,163,184,.055) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, black, transparent 90%);
+    }
+    .glass { background: rgba(17,28,46,.78); border: 1px solid rgba(148,163,184,.16); backdrop-filter: blur(14px); }
+    .gradient-text { background: linear-gradient(90deg,#93c5fd,#c4b5fd); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .card { background: linear-gradient(145deg, rgba(20,33,54,.96), rgba(13,23,39,.96)); border: 1px solid rgba(148,163,184,.15); }
+    .card:hover { border-color: rgba(96,165,250,.48); transform: translateY(-4px); }
+    .card { transition: .25s ease; }
+    .tag { border: 1px solid rgba(148,163,184,.2); background: rgba(30,45,67,.7); }
+    .section-kicker { color:#93c5fd; letter-spacing:.18em; text-transform:uppercase; font-size:.72rem; font-weight:700; }
+  </style>
+</head>
+<body class="antialiased selection:bg-blue-400/30">
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/85 backdrop-blur-xl">
+    <nav class="mx-auto flex w-[90%] max-w-7xl items-center justify-between py-4">
+      <a href="#home" class="font-bold tracking-tight text-lg">PP<span class="text-blue-400">.</span></a>
+      <div class="hidden items-center gap-7 text-sm text-slate-300 md:flex">
+        <a class="hover:text-white" href="#about">About</a>
+        <a class="hover:text-white" href="#skills">Skills</a>
+        <a class="hover:text-white" href="#projects">Projects</a>
+        <a class="hover:text-white" href="#experience">Experience</a>
+        <a class="hover:text-white" href="#education">Education</a>
+        <a class="rounded-full border border-blue-400/50 px-4 py-2 text-blue-200 hover:bg-blue-400/10" href="#contact">Contact</a>
+      </div>
+      <button id="menuBtn" class="rounded-lg border border-white/15 px-3 py-2 text-sm md:hidden" aria-label="Open navigation">Menu</button>
+    </nav>
+    <div id="mobileMenu" class="hidden border-t border-white/10 bg-ink px-[5%] py-4 md:hidden">
+      <div class="flex flex-col gap-4 text-sm text-slate-300">
+        <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
+        <a href="#experience">Experience</a><a href="#education">Education</a><a href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="relative flex min-h-screen items-center overflow-hidden pt-24">
+      <div class="grid-bg absolute inset-0"></div>
+      <div class="absolute -right-32 top-28 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl"></div>
+      <div class="absolute -left-32 bottom-10 h-80 w-80 rounded-full bg-violet-500/10 blur-3xl"></div>
+      <div class="relative mx-auto grid w-[90%] max-w-7xl items-center gap-14 py-20 lg:grid-cols-[1.25fr_.75fr]">
+        <div>
+          <div class="mb-7 inline-flex items-center gap-2 rounded-full border border-blue-400/25 bg-blue-400/10 px-4 py-2 text-sm text-blue-200">
+            <span class="h-2 w-2 rounded-full bg-blue-400"></span> Cloud • DevOps • Web Development
+          </div>
+          <p class="mb-4 text-slate-400">Hello, I'm</p>
+          <h1 class="text-5xl font-extrabold leading-[1.08] tracking-tight sm:text-6xl xl:text-7xl">Priyanshu<br><span class="gradient-text">Pandey</span></h1>
+          <h2 class="mt-6 text-xl font-semibold text-slate-200 sm:text-2xl">Aspiring Cloud & DevOps Engineer</h2>
+          <p class="mt-5 max-w-2xl text-base leading-8 text-slate-400">
+            I enjoy building web applications and learning how to deploy, automate, and manage them using cloud and DevOps technologies. My focus is on AWS, Linux, Docker, Kubernetes, and practical infrastructure projects.
+          </p>
+          <div class="mt-9 flex flex-wrap gap-4">
+            <a href="#projects" class="rounded-full bg-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-glow hover:bg-blue-400">Explore my work <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/priyanshupandey20" target="_blank" rel="noreferrer" class="rounded-full border border-slate-600 px-6 py-3 text-sm font-semibold text-slate-200 hover:border-blue-400 hover:text-white">GitHub profile</a>
+          </div>
+          <div class="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-sm text-slate-400">
+            <span>📍 Gurugram, Haryana, India</span>
+            <span>🎓 BCA Graduate</span>
+          </div>
+        </div>
+        <div class="relative mx-auto w-full max-w-md">
+          <div class="absolute -inset-5 rounded-[2rem] bg-gradient-to-br from-blue-500/20 to-violet-500/10 blur-2xl"></div>
+          <div class="glass relative rounded-[2rem] p-6 shadow-glow sm:p-8">
+            <div class="mb-6 flex items-center justify-between">
+              <span class="text-xs font-semibold uppercase tracking-[.2em] text-slate-400">Developer snapshot</span>
+              <span class="rounded-full bg-blue-400/10 px-3 py-1 text-xs text-blue-200">Learning by building</span>
+            </div>
+            <div class="space-y-4 font-mono text-sm">
+              <div class="rounded-xl border border-white/10 bg-black/20 p-4">
+                <p class="text-slate-500"># current_focus</p>
+                <p class="mt-2"><span class="text-violet-300">focus</span> = <span class="text-emerald-200">"Cloud & DevOps"</span></p>
+                <p><span class="text-violet-300">cloud</span> = <span class="text-emerald-200">"AWS"</span></p>
+                <p><span class="text-violet-300">tools</span> = [<span class="text-emerald-200">"Linux", "Docker", "Kubernetes"</span>]</p>
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="rounded-xl border border-white/10 bg-white/[.03] p-4"><p class="text-2xl">☁️</p><p class="mt-2 font-sans font-semibold">Cloud</p><p class="mt-1 font-sans text-xs text-slate-500">AWS services</p></div>
+                <div class="rounded-xl border border-white/10 bg-white/[.03] p-4"><p class="text-2xl">⚙️</p><p class="mt-2 font-sans font-semibold">Automation</p><p class="mt-1 font-sans text-xs text-slate-500">CI/CD learning</p></div>
+                <div class="rounded-xl border border-white/10 bg-white/[.03] p-4"><p class="text-2xl">🐳</p><p class="mt-2 font-sans font-semibold">Containers</p><p class="mt-1 font-sans text-xs text-slate-500">Docker & K8s</p></div>
+                <div class="rounded-xl border border-white/10 bg-white/[.03] p-4"><p class="text-2xl">💻</p><p class="mt-2 font-sans font-semibold">Development</p><p class="mt-1 font-sans text-xs text-slate-500">PHP & MySQL</p></div>
+              </div>
+            </div>
+            <p class="mt-6 text-xs text-slate-500">Curious mindset. Practical learning. Continuous improvement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-24">
+      <div class="mx-auto w-[90%] max-w-7xl">
+        <p class="section-kicker">01 / About me</p>
+        <div class="mt-4 grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
+          <div><h2 class="text-3xl font-bold leading-tight sm:text-4xl">Building a strong foundation in <span class="gradient-text">cloud technology.</span></h2></div>
+          <div class="space-y-5 text-[15px] leading-8 text-slate-400">
+            <p>I'm Priyanshu Pandey, a BCA graduate from Meerut Institute of Technology. I have a foundation in web development and am expanding my skills toward cloud computing and DevOps engineering.</p>
+            <p>I've worked with HTML, CSS, JavaScript, PHP, and MySQL to build web-based projects. Alongside development, I've been practicing AWS infrastructure, Linux administration, Docker, Kubernetes, networking, and application deployment.</p>
+            <p>I also bring customer-facing professional experience from an international Amazon support process at Concentrix, where I supported customers through live chat and developed communication, problem-solving, and service skills.</p>
+            <p>My goal is to grow into a Cloud/DevOps role where I can help build reliable systems, automate workflows, and make application delivery smoother.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="border-y border-white/5 bg-[#0e1828] py-24">
+      <div class="mx-auto w-[90%] max-w-7xl">
+        <p class="section-kicker">02 / Technical skills</p>
+        <h2 class="mt-4 text-3xl font-bold sm:text-4xl">Tools & technologies</h2>
+        <p class="mt-4 max-w-2xl text-slate-400">Technologies I've used, practiced, or am currently learning through projects and hands-on labs.</p>
+        <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="card rounded-2xl p-6"><div class="text-2xl">☁️</div><h3 class="mt-4 text-lg font-bold">AWS & Cloud</h3><div class="mt-4 flex flex-wrap gap-2"><span class="tag rounded-full px-3 py-1 text-xs">EC2</span><span class="tag rounded-full px-3 py-1 text-xs">S3</span><span class="tag rounded-full px-3 py-1 text-xs">EBS</span><span class="tag rounded-full px-3 py-1 text-xs">VPC</span><span class="tag rounded-full px-3 py-1 text-xs">IAM</span><span class="tag rounded-full px-3 py-1 text-xs">RDS</span><span class="tag rounded-full px-3 py-1 text-xs">Route 53</span><span class="tag rounded-full px-3 py-1 text-xs">CloudWatch</span><span class="tag rounded-full px-3 py-1 text-xs">Load Balancing</span><span class="tag rounded-full px-3 py-1 text-xs">Auto Scaling</span></div></div>
+          <div class="card rounded-2xl p-6"><div class="text-2xl">⚙️</div><h3 class="mt-4 text-lg font-bold">DevOps & Containers</h3><div class="mt-4 flex flex-wrap gap-2"><span class="tag rounded-full px-3 py-1 text-xs">Git</span><span class="tag rounded-full px-3 py-1 text-xs">GitHub</span><span class="tag rounded-full px-3 py-1 text-xs">GitHub Actions</span><span class="tag rounded-full px-3 py-1 text-xs">Docker</span><span class="tag rounded-full px-3 py-1 text-xs">Docker Compose</span><span class="tag rounded-full px-3 py-1 text-xs">Kubernetes</span><span class="tag rounded-full px-3 py-1 text-xs">Minikube</span><span class="tag rounded-full px-3 py-1 text-xs">Kind</span></div></div>
+          <div class="card rounded-2xl p-6"><div class="text-2xl">🐧</div><h3 class="mt-4 text-lg font-bold">Linux & Networking</h3><div class="mt-4 flex flex-wrap gap-2"><span class="tag rounded-full px-3 py-1 text-xs">Ubuntu</span><span class="tag rounded-full px-3 py-1 text-xs">SSH</span><span class="tag rounded-full px-3 py-1 text-xs">Nginx</span><span class="tag rounded-full px-3 py-1 text-xs">DNS</span><span class="tag rounded-full px-3 py-1 text-xs">CIDR</span><span class="tag rounded-full px-3 py-1 text-xs">Subnets</span><span class="tag rounded-full px-3 py-1 text-xs">NAT Gateway</span></div></div>
+          <div class="card rounded-2xl p-6"><div class="text-2xl">💻</div><h3 class="mt-4 text-lg font-bold">Web development</h3><div class="mt-4 flex flex-wrap gap-2"><span class="tag rounded-full px-3 py-1 text-xs">HTML5</span><span class="tag rounded-full px-3 py-1 text-xs">CSS3</span><span class="tag rounded-full px-3 py-1 text-xs">JavaScript</span><span class="tag rounded-full px-3 py-1 text-xs">Tailwind CSS</span><span class="tag rounded-full px-3 py-1 text-xs">Bootstrap</span><span class="tag rounded-full px-3 py-1 text-xs">PHP</span><span class="tag rounded-full px-3 py-1 text-xs">MySQL</span><span class="tag rounded-full px-3 py-1 text-xs">AJAX</span><span class="tag rounded-full px-3 py-1 text-xs">APIs</span></div></div>
+          <div class="card rounded-2xl p-6"><div class="text-2xl">🧰</div><h3 class="mt-4 text-lg font-bold">Tools & platforms</h3><div class="mt-4 flex flex-wrap gap-2"><span class="tag rounded-full px-3 py-1 text-xs">VS Code</span><span class="tag rounded-full px-3 py-1 text-xs">Composer</span><span class="tag rounded-full px-3 py-1 text-xs">PHPMailer</span><span class="tag rounded-full px-3 py-1 text-xs">XAMPP</span><span class="tag rounded-full px-3 py-1 text-xs">Cloudflare</span><span class="tag rounded-full px-3 py-1 text-xs">Certbot</span></div></div>
+          <div class="card flex flex-col justify-center rounded-2xl p-6"><p class="text-sm font-semibold text-blue-200">Current learning focus</p><h3 class="mt-3 text-2xl font-bold">CI/CD & cloud deployment</h3><p class="mt-3 text-sm leading-7 text-slate-400">Practicing automated workflows with GitHub Actions and strengthening container orchestration and AWS deployment skills.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="py-24">
+      <div class="mx-auto w-[90%] max-w-7xl">
+        <p class="section-kicker">03 / Selected projects</p>
+        <h2 class="mt-4 text-3xl font-bold sm:text-4xl">Things I've built & practiced</h2>
+        <p class="mt-4 max-w-2xl text-slate-400">A mix of web development projects and hands-on cloud deployment work.</p>
+        <div class="mt-10 grid gap-5 lg:grid-cols-2">
+          <article class="card rounded-2xl p-7">
+            <div class="flex items-start justify-between gap-4"><span class="rounded-lg bg-blue-400/10 px-3 py-2 text-xs font-semibold text-blue-200">Web application</span><span class="text-2xl">🌐</span></div>
+            <h3 class="mt-5 text-xl font-bold">MIT Media Community</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-400">A full-stack student social networking platform built as an academic project, focused on connecting students through a web-based community experience.</p>
+            <div class="mt-5 flex flex-wrap gap-2"><span class="tag rounded-full px-3 py-1 text-xs">PHP</span><span class="tag rounded-full px-3 py-1 text-xs">MySQL</span><span class="tag rounded-full px-3 py-1 text-xs">JavaScript</span><span class="tag rounded-full px-3 py-1 text-xs">HTML/CSS</span></div>
+          </article>
+          <article class="card rounded-2xl p-7">
+            <div class="flex items-start justify-between gap-4"><span class="rounded-lg bg-violet-400/10 px-3 py-2 text-xs font-semibold text-violet-200">Cloud deployment</span><span class="text-2xl">☁️</span></div>
+            <h3 class="mt-5 text-xl font-bold">MIT Media — AWS Deployment</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-400">Deployed a PHP application on AWS EC2 and connected it to Amazon RDS. Worked through server configuration, database connectivity, HTTPS with Certbot, and production troubleshooting.</p>
+            <div class="mt-5 flex flex-wrap gap-2"><span class="tag rounded-full px-3 py-1 text-xs">AWS EC2</span><span class="tag rounded-full px-3 py-1 text-xs">RDS</span><span class="tag rounded-full px-3 py-1 text-xs">Ubuntu</span><span class="tag rounded-full px-3 py-1 text-xs">Nginx/Apache</span><span class="tag rounded-full px-3 py-1 text-xs">SSL</span></div>
+          </article>
+          <article class="card rounded-2xl p-7">
+            <div class="flex items-start justify-between gap-4"><span class="rounded-lg bg-blue-400/10 px-3 py-2 text-xs font-semibold text-blue-200">Infrastructure practice</span><span class="text-2xl">⚖️</span></div>
+            <h3 class="mt-5 text-xl font-bold">AWS Load Balancing & Auto Scaling</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-400">Hands-on AWS lab exploring multiple EC2 instances behind a load balancer, health checks, traffic distribution, and Auto Scaling policies.</p>
+            <div class="mt-5 flex flex-wrap gap-2"><span class="tag rounded-full px-3 py-1 text-xs">EC2</span><span class="tag rounded-full px-3 py-1 text-xs">ALB</span><span class="tag rounded-full px-3 py-1 text-xs">Auto Scaling</span><span class="tag rounded-full px-3 py-1 text-xs">CloudWatch</span></div>
+          </article>
+          <article class="card rounded-2xl p-7">
+            <div class="flex items-start justify-between gap-4"><span class="rounded-lg bg-violet-400/10 px-3 py-2 text-xs font-semibold text-violet-200">Cloud storage</span><span class="text-2xl">🗄️</span></div>
+            <h3 class="mt-5 text-xl font-bold">PHP Application — Amazon S3 Uploads</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-400">Worked on moving application uploads from local server storage to Amazon S3 using an attached IAM role and the AWS SDK for PHP.</p>
+            <div class="mt-5 flex flex-wrap gap-2"><span class="tag rounded-full px-3 py-1 text-xs">Amazon S3</span><span class="tag rounded-full px-3 py-1 text-xs">IAM Roles</span><span class="tag rounded-full px-3 py-1 text-xs">PHP SDK</span><span class="tag rounded-full px-3 py-1 text-xs">Composer</span></div>
+          </article>
+          <article class="card rounded-2xl p-7">
+            <div class="flex items-start justify-between gap-4"><span class="rounded-lg bg-blue-400/10 px-3 py-2 text-xs font-semibold text-blue-200">Website development</span><span class="text-2xl">🏗️</span></div>
+            <h3 class="mt-5 text-xl font-bold">Kushaan Engineering Website</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-400">Responsive company website work featuring a fixed navigation bar, hero section, services, project cards, client slider, and contact interface using Tailwind CSS.</p>
+            <div class="mt-5 flex flex-wrap gap-2"><span class="tag rounded-full px-3 py-1 text-xs">Tailwind CSS</span><span class="tag rounded-full px-3 py-1 text-xs">JavaScript</span><span class="tag rounded-full px-3 py-1 text-xs">Responsive UI</span></div>
+          </article>
+          <article class="card rounded-2xl p-7">
+            <div class="flex items-start justify-between gap-4"><span class="rounded-lg bg-violet-400/10 px-3 py-2 text-xs font-semibold text-violet-200">CI/CD learning</span><span class="text-2xl">🔁</span></div>
+            <h3 class="mt-5 text-xl font-bold">GitHub Actions CI/CD Practice</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-400">Building a manual GitHub Actions workflow with environment selection and sequential code, build, test, and deploy jobs as a foundation for automation.</p>
+            <div class="mt-5 flex flex-wrap gap-2"><span class="tag rounded-full px-3 py-1 text-xs">Git</span><span class="tag rounded-full px-3 py-1 text-xs">GitHub Actions</span><span class="tag rounded-full px-3 py-1 text-xs">YAML</span><span class="tag rounded-full px-3 py-1 text-xs">CI/CD</span></div>
+          </article>
+        </div>
+        <p class="mt-6 text-xs text-slate-500">Project descriptions reflect practical work and learning labs; add live demo links and source repositories where available.</p>
+      </div>
+    </section>
+
+    <section id="experience" class="border-y border-white/5 bg-[#0e1828] py-24">
+      <div class="mx-auto w-[90%] max-w-7xl">
+        <p class="section-kicker">04 / Professional experience</p>
+        <h2 class="mt-4 text-3xl font-bold sm:text-4xl">Experience beyond technology</h2>
+        <div class="mt-10 max-w-3xl rounded-2xl border border-white/10 bg-white/[.025] p-7 sm:p-9">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div><h3 class="text-xl font-bold">Customer Support Associate</h3><p class="mt-1 text-blue-200">Concentrix · International Amazon support</p></div>
+            <span class="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-400">Professional experience</span>
+          </div>
+          <p class="mt-5 text-sm leading-7 text-slate-400">Supported international customers through live chat, assisting with order-related queries, account issues, invoices, payments, refunds, deliveries, and basic website or account troubleshooting.</p>
+          <p class="mt-4 text-sm leading-7 text-slate-400">Worked with a focus on clear communication, customer satisfaction, accurate resolutions, quality standards, productivity, and service-level expectations.</p>
+          <div class="mt-5 flex flex-wrap gap-2"><span class="tag rounded-full px-3 py-1 text-xs">Live chat support</span><span class="tag rounded-full px-3 py-1 text-xs">Problem solving</span><span class="tag rounded-full px-3 py-1 text-xs">Communication</span><span class="tag rounded-full px-3 py-1 text-xs">Customer experience</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="py-24">
+      <div class="mx-auto w-[90%] max-w-7xl">
+        <p class="section-kicker">05 / Education</p>
+        <h2 class="mt-4 text-3xl font-bold sm:text-4xl">Academic background</h2>
+        <div class="mt-9 grid gap-5 md:grid-cols-2">
+          <div class="card rounded-2xl p-7">
+            <p class="text-sm text-blue-200">2022 – 2025</p>
+            <h3 class="mt-3 text-xl font-bold">Bachelor of Computer Applications (BCA)</h3>
+            <p class="mt-2 text-slate-400">Meerut Institute of Technology (MIT), Meerut</p>
+            <p class="mt-4 text-sm leading-7 text-slate-500">Built an academic foundation in computer applications and software development, including practical web development project work.</p>
+          </div>
+          <div class="card rounded-2xl p-7">
+            <p class="text-sm text-blue-200">Continuous learning</p>
+            <h3 class="mt-3 text-xl font-bold">Cloud & DevOps Skill Development</h3>
+            <p class="mt-2 text-slate-400">AWS, Linux, Docker, Kubernetes, Git & GitHub Actions</p>
+            <p class="mt-4 text-sm leading-7 text-slate-500">Developing practical skills through hands-on labs, deployment exercises, troubleshooting, and workflow automation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="relative overflow-hidden border-t border-white/5 bg-[#0e1828] py-24">
+      <div class="absolute -right-20 top-0 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl"></div>
+      <div class="relative mx-auto w-[90%] max-w-5xl text-center">
+        <p class="section-kicker">06 / Contact</p>
+        <h2 class="mt-4 text-3xl font-bold sm:text-5xl">Let's connect and build<br><span class="gradient-text">something meaningful.</span></h2>
+        <p class="mx-auto mt-5 max-w-xl leading-8 text-slate-400">I'm interested in learning opportunities and entry-level roles in Cloud, DevOps, and related technology fields.</p>
+        <div class="mt-9 flex flex-wrap justify-center gap-4">
+          <a href="https://github.com/priyanshupandey20" target="_blank" rel="noreferrer" class="rounded-full bg-blue-500 px-6 py-3 text-sm font-semibold text-white hover:bg-blue-400">GitHub ↗</a>
+          <a href="https://mitmedia.site/portfolio/" target="_blank" rel="noreferrer" class="rounded-full border border-slate-600 px-6 py-3 text-sm font-semibold text-slate-200 hover:border-blue-400">Existing portfolio ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 py-7">
+    <div class="mx-auto flex w-[90%] max-w-7xl flex-col items-center justify-between gap-3 text-center text-xs text-slate-500 sm:flex-row sm:text-left">
+      <p>© <span id="year"></span> Priyanshu Pandey. All rights reserved.</p>
+      <p>Designed with a focus on cloud, code, and continuous learning.</p>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+  </script>
+</body>
+</html>
