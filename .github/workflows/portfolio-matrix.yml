@@ -1,1 +1,24 @@
-name: Portfoli
+name: Python lint
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+    vallidate:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: checkout code
+              uses: action/checkout@v4
+
+            - name: setup python 3.13
+              uses: action/setup-python@v5
+              with:
+                python-version: "3.13"
+
+            - name: install dependencies
+              run: pip install -r requirements.txt
+
+            - name: run linter
+              run: flake8 app.py
