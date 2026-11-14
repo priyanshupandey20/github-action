@@ -1,88 +1,163 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevOps Zero To Hero</title>
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            color: #333;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            color: #e0e0e0;
+            padding: 20px;
         }
+
         .container {
-            text-align: center;
-            padding: 2rem;
-            max-width: 640px;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(90deg, #00d2ff, #7b2ff7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .badge {
-            display: inline-block;
-            margin: 1rem 0 2rem;
-            padding: 0.4rem 1.2rem;
-            border: 1px solid #7b2ff7;
-            border-radius: 999px;
-            font-size: 0.9rem;
-            color: #c4b5fd;
-            letter-spacing: 0.05em;
-        }
-        .cards {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .card {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+            max-width: 650px;
+            background: #ffffff;
+            padding: 45px 30px;
             border-radius: 12px;
-            padding: 1.5rem 1.8rem;
-            min-width: 150px;
-            flex: 1;
+            text-align: center;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
         }
-        .card span {
-            display: block;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: #9ca3af;
-            margin-bottom: 0.4rem;
+
+        .status {
+            display: inline-block;
+            background: #e8f7ed;
+            color: #218838;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-bottom: 25px;
         }
-        .card strong {
-            font-size: 1.25rem;
-            color: #f9fafb;
+
+        .status span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #28a745;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #202b3c;
+            margin-bottom: 12px;
+        }
+
+        .description {
+            font-size: 15px;
+            color: #777;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .details {
+            background: #f8f9fb;
+            border: 1px solid #e9edf2;
+            border-radius: 8px;
+            text-align: left;
+            padding: 20px;
+        }
+
+        .detail {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 13px 0;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 14px;
+        }
+
+        .detail:last-child {
+            border-bottom: none;
+        }
+
+        .label {
+            color: #777;
+        }
+
+        .value {
+            color: #202b3c;
+            font-weight: 600;
+            text-align: right;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 13px;
+            color: #999;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 35px 20px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            .detail {
+                font-size: 13px;
+            }
         }
     </style>
 </head>
+
 <body>
+
     <div class="container">
-        <h1>DevOps Zero To Hero</h1>
-        <div class="badge">Josh Batch 10</div>
-        <div class="cards">
-            <div class="card">
-                <span>Framework</span>
-                <strong>Flask 3.1</strong>
-            </div>
-            <div class="card">
-                <span>Runtime</span>
-                <strong>Python 3.14</strong>
-            </div>
-            <div class="card">
-                <span>Deploy</span>
-                <strong>AWS ECS</strong>
-            </div>
+
+        <div class="status">
+            <span></span> Application Running Successfully
         </div>
+
+        <h1>DevOps Zero To Hero</h1>
+
+        <p class="description">
+            Welcome! Your Flask application has been successfully
+            deployed and is running on AWS.
+        </p>
+
+        <div class="details">
+
+            <div class="detail">
+                <span class="label">Framework</span>
+                <span class="value">Flask 3.1</span>
+            </div>
+
+            <div class="detail">
+                <span class="label">Runtime</span>
+                <span class="value">Python 3.14</span>
+            </div>
+
+            <div class="detail">
+                <span class="label">Deployment</span>
+                <span class="value">AWS ECS</span>
+            </div>
+
+        </div>
+
+        <footer>
+            DevOps Zero To Hero &copy; 2026
+        </footer>
+
     </div>
+
 </body>
 </html>
