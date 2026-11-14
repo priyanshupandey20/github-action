@@ -1,27 +1,40 @@
 
-name: Deploy Flask app
+name: Deploy Flask App
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   deploy:
     runs-on: self-hosted
 
-    env:
-      DOCKERHUB_USER: ${{ vars.DOCKERHUB_USER }}
-
     steps:
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Check Docker
+      - name: Docker Hub Login
         run: |
-          docker --version
-          docker compose version
+          echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login \
+            -u "${{ secrets.DOCKERHUB_USER }}" \
+            --password-stdin
+
+      - name: Build Docker Image
+        run: |
+          docker build -t ${{ secrets.DOCKERHUB_USER }}/github-actions-app:latest .
+
+      - name: Push Image to Docker Hub
+        run: |
+          docker push ${{ secrets.DOCKERHUB_USER }}/github-actions-app:latest
 
       - name: Deploy with Docker Compose
-        run: docker compose up -d --build
+        env:
+          DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USER }}
+        run: |
+          docker compose -f "$GITHUB_WORKSPACE/docker-compose.yml" pull
+          docker compose -f "$GITHUB_WORKSPACE/docker-compose.yml" up -d
 
-      - name: Check running containers
-        run: docker compose ps
+      - name: Check Running Containers
+        run: docker ps

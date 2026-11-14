@@ -1,6 +1,8 @@
-services:
 
+services:
   web:
-    image: ${DOCKERHUB_USER}/github-actions-app:${DOCKER_TAG}
+    image: ${DOCKERHUB_USER}/github-actions-app:latest
+    container_name: flask-app
     ports:
-     - "80:80"
+      - "80:80"
+    restart: unless-stopped
