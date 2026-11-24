@@ -3,7 +3,7 @@ name: Deploy Flask App
 
 on:
   workflow_dispatch:
- 
+
 jobs:
   deploy:
     runs-on: self-hosted
