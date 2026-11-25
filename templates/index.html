@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevOps Zero To Hero</title>
+    <meta name="theme-color" content="#080d19">
+    <title>DevSecOps | Application Running Successfully</title>
 
     <style>
         * {
@@ -14,106 +15,257 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: #f5f7fa;
-            color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080d19;
+            color: #e5e7eb;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+            line-height: 1.6;
         }
 
         .container {
-            width: 100%;
-            max-width: 650px;
-            background: #ffffff;
-            padding: 45px 30px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            max-width: 1100px;
+            margin: auto;
+            padding: 25px 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            padding: 15px 0;
+            border-bottom: 1px solid #263247;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: bold;
+            color: #60a5fa;
         }
 
         .status {
-            display: inline-block;
-            background: #e8f7ed;
-            color: #218838;
-            padding: 8px 15px;
-            border-radius: 20px;
+            color: #4ade80;
+            background: #123322;
+            border: 1px solid #166534;
+            padding: 7px 14px;
+            border-radius: 30px;
             font-size: 13px;
-            margin-bottom: 25px;
         }
 
-        .status span {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background: #28a745;
+        .hero {
+            text-align: center;
+            padding: 75px 15px 55px;
+        }
+
+        .check {
+            width: 75px;
+            height: 75px;
+            display: grid;
+            place-items: center;
+            margin: auto auto 22px;
+            background: #123c2a;
+            color: #4ade80;
+            border: 2px solid #22c55e;
             border-radius: 50%;
-            margin-right: 6px;
+            font-size: 38px;
         }
 
-        h1 {
-            font-size: 32px;
-            color: #202b3c;
+        .hero h1 {
+            font-size: clamp(28px, 5vw, 46px);
+            color: #ffffff;
             margin-bottom: 12px;
         }
 
-        .description {
-            font-size: 15px;
-            color: #777;
-            line-height: 1.6;
-            margin-bottom: 30px;
+        .hero h1 span {
+            color: #4ade80;
         }
 
-        .details {
-            background: #f8f9fb;
-            border: 1px solid #e9edf2;
-            border-radius: 8px;
-            text-align: left;
-            padding: 20px;
+        .hero p {
+            color: #9ca3af;
+            max-width: 650px;
+            margin: auto;
         }
 
-        .detail {
-            display: flex;
-            justify-content: space-between;
-            gap: 15px;
-            padding: 13px 0;
-            border-bottom: 1px solid #e5e7eb;
+        .live {
+            display: inline-block;
+            margin-top: 22px;
+            padding: 9px 20px;
+            border-radius: 6px;
+            background: #123c2a;
+            color: #4ade80;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 35px 0 22px;
+        }
+
+        .section-title h2 {
+            color: #ffffff;
+            font-size: 25px;
+        }
+
+        .section-title p {
+            color: #9ca3af;
+            margin-top: 5px;
             font-size: 14px;
         }
 
-        .detail:last-child {
-            border-bottom: none;
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 17px;
         }
 
-        .label {
-            color: #777;
+        .card {
+            background: #111a2b;
+            border: 1px solid #29364b;
+            border-radius: 12px;
+            padding: 22px;
+            transition: 0.25s;
         }
 
-        .value {
-            color: #202b3c;
-            font-weight: 600;
-            text-align: right;
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: #3b82f6;
+        }
+
+        .icon {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            color: #ffffff;
+            font-size: 17px;
+            margin-bottom: 7px;
+        }
+
+        .card p {
+            color: #9ca3af;
+            font-size: 13px;
+        }
+
+        .success {
+            color: #4ade80;
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 14px;
+            display: inline-block;
+        }
+
+        .pipeline {
+            background: #111a2b;
+            border: 1px solid #29364b;
+            border-radius: 12px;
+            padding: 25px;
+            overflow-x: auto;
+        }
+
+        .pipeline-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            min-width: 650px;
+        }
+
+        .stage {
+            background: #19263b;
+            border: 1px solid #334155;
+            padding: 16px 13px;
+            border-radius: 9px;
+            text-align: center;
+            min-width: 125px;
+        }
+
+        .stage strong {
+            display: block;
+            color: #ffffff;
+            font-size: 14px;
+        }
+
+        .stage small {
+            color: #4ade80;
+            font-size: 11px;
+        }
+
+        .arrow {
+            color: #60a5fa;
+            font-size: 22px;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 12px;
+        }
+
+        .tech {
+            background: #111a2b;
+            border: 1px solid #29364b;
+            border-radius: 9px;
+            padding: 15px;
+            text-align: center;
+            color: #d1d5db;
+            font-size: 14px;
+        }
+
+        .info {
+            margin-top: 35px;
+            background: #111a2b;
+            border: 1px solid #29364b;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .info h2 {
+            margin-bottom: 15px;
+        }
+
+        .info p {
+            color: #9ca3af;
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        .info strong {
+            color: #e5e7eb;
         }
 
         footer {
-            margin-top: 30px;
+            text-align: center;
+            color: #64748b;
+            padding: 35px 10px 15px;
             font-size: 13px;
-            color: #999;
         }
 
-        @media (max-width: 480px) {
+        .github-btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 22px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .github-btn:hover {
+            background: #1d4ed8;
+        }
+
+        @media(max-width: 600px) {
+            .hero {
+                padding-top: 50px;
+            }
+
             .container {
-                padding: 35px 20px;
-            }
-
-            h1 {
-                font-size: 26px;
-            }
-
-            .detail {
-                font-size: 13px;
+                padding: 15px;
             }
         }
     </style>
@@ -121,43 +273,177 @@
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <div class="status">
-            <span></span> Application Running Successfully
-        </div>
+    <header>
+        <div class="logo">🚀 DevSecOps Project</div>
+        <div class="status">● Application Online</div>
+    </header>
 
-        <h1>DevOps Zero To Hero</h1>
+    <section class="hero">
 
-        <p class="description">
-            Welcome! Your Flask application has been successfully
-            deployed and is running on AWS.
+        <div class="check">✓</div>
+
+        <h1>
+            Application Running <span>Successfully!</span>
+        </h1>
+
+        <p>
+            Congratulations! Your application has been successfully
+            deployed on AWS EC2 using an automated GitHub Actions
+            CI/CD and DevSecOps End-to-End Pipeline.
         </p>
 
-        <div class="details">
+        <div class="live">● LIVE APPLICATION</div>
 
-            <div class="detail">
-                <span class="label">Framework</span>
-                <span class="value">Flask 3.1</span>
+        <br>
+
+        <a class="github-btn"
+           href="https://github.com/priyanshupandey20/github-action"
+           target="_blank" rel="noopener noreferrer">
+            View GitHub Repository →
+        </a>
+
+    </section>
+
+    <section>
+        <div class="section-title">
+            <h2>CI/CD Pipeline</h2>
+            <p>Automated Continuous Integration and Continuous Deployment</p>
+        </div>
+
+        <div class="pipeline">
+            <div class="pipeline-flow">
+
+                <div class="stage">
+                    <strong>GitHub</strong>
+                    <small>Code Push</small>
+                </div>
+
+                <span class="arrow">→</span>
+
+                <div class="stage">
+                    <strong>CI Pipeline</strong>
+                    <small>Build & Test</small>
+                </div>
+
+                <span class="arrow">→</span>
+
+                <div class="stage">
+                    <strong>Docker Hub</strong>
+                    <small>Image Push</small>
+                </div>
+
+                <span class="arrow">→</span>
+
+                <div class="stage">
+                    <strong>AWS EC2</strong>
+                    <small>CD Deployment</small>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title">
+            <h2>DevSecOps Security Pipeline</h2>
+            <p>Security integrated throughout the development lifecycle</p>
+        </div>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="icon">📊</div>
+                <h3>Code Quality Analysis</h3>
+                <p>Analyze source code quality and identify coding issues.</p>
+                <span class="success">✓ Integrated</span>
             </div>
 
-            <div class="detail">
-                <span class="label">Runtime</span>
-                <span class="value">Python 3.14</span>
+            <div class="card">
+                <div class="icon">🛡️</div>
+                <h3>Code Security Scan</h3>
+                <p>Identify potential security vulnerabilities in source code.</p>
+                <span class="success">✓ Integrated</span>
             </div>
 
-            <div class="detail">
-                <span class="label">Deployment</span>
-                <span class="value">AWS ECS</span>
+            <div class="card">
+                <div class="icon">📦</div>
+                <h3>Dependency Scan</h3>
+                <p>Check project dependencies for known vulnerabilities.</p>
+                <span class="success">✓ Integrated</span>
+            </div>
+
+            <div class="card">
+                <div class="icon">🐳</div>
+                <h3>Dockerfile Scan</h3>
+                <p>Inspect Docker configuration and container security risks.</p>
+                <span class="success">✓ Integrated</span>
+            </div>
+
+            <div class="card">
+                <div class="icon">🔍</div>
+                <h3>Docker Image Scan</h3>
+                <p>Scan container images for vulnerabilities.</p>
+                <span class="success">✓ Integrated</span>
+            </div>
+
+            <div class="card">
+                <div class="icon">🔐</div>
+                <h3>Secret Detection</h3>
+                <p>Detect accidentally exposed API keys, tokens and credentials.</p>
+                <span class="success">✓ Integrated</span>
+            </div>
+
+            <div class="card">
+                <div class="icon">🛡️</div>
+                <h3>Trivy Scanner</h3>
+                <p>Scan container images and dependencies for security issues.</p>
+                <span class="success">✓ Integrated</span>
             </div>
 
         </div>
+    </section>
 
-        <footer>
-            DevOps Zero To Hero &copy; 2026
-        </footer>
+    <section>
+        <div class="section-title">
+            <h2>Technologies Used</h2>
+            <p>Tools and technologies used in this project</p>
+        </div>
 
-    </div>
+        <div class="tech-grid">
+            <div class="tech">🐙 GitHub</div>
+            <div class="tech">⚙️ GitHub Actions</div>
+            <div class="tech">🐳 Docker</div>
+            <div class="tech">📦 Docker Hub</div>
+            <div class="tech">☁️ AWS EC2</div>
+            <div class="tech">🛡️ Trivy</div>
+            <div class="tech">🔐 Security Scanning</div>
+            <div class="tech">🐍 Python</div>
+            <div class="tech">🟢 Linux / Ubuntu</div>
+            <div class="tech">🚀 Gunicorn</div>
+        </div>
+    </section>
+
+    <section class="info">
+        <h2>Deployment Information</h2>
+
+        <p><strong>Project:</strong> DevSecOps End-to-End Pipeline</p>
+        <p><strong>Cloud Provider:</strong> Amazon Web Services</p>
+        <p><strong>Deployment:</strong> AWS EC2</p>
+        <p><strong>Containerization:</strong> Docker</p>
+        <p><strong>CI/CD:</strong> GitHub Actions</p>
+        <p><strong>Security Scanner:</strong> Trivy</p>
+        <p><strong>Application Server:</strong> Gunicorn</p>
+        <p><strong>Deployment Status:</strong> Application Running Successfully</p>
+    </section>
+
+    <footer>
+        <p>Built with ❤️ using AWS, Docker, GitHub Actions and DevSecOps</p>
+        <p>© 2026 DevSecOps Project | Continuous Integration • Continuous Deployment • Continuous Security</p>
+    </footer>
+
+</div>
 
 </body>
 </html>
