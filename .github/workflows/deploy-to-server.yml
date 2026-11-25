@@ -1,19 +1,65 @@
+
 name: Deploy To Server
 
-on: 
-    workflow_call:
+on:
+  workflow_call:
 
 jobs:
-    deploy: 
-        runs-on: ubuntu-latest
-        steps:
-            - name: SSH to Pro server
-              uses: appleboy/ssh-action@v1.0.3
-              with:
-                host: ${{ secrets.EC2_SSH_HOST }}
-                username: ${{ secrets.EC2_SSH_USER }}
-                key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
-                script: |
-                    echo "Staring Deployment"
-                    mkdir -p devops
-                    
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set Docker variables
+        run: |
+          echo "DOCKERHUB_USER=${{ vars.DOCKERHUB_USER }}" >> "$GITHUB_ENV"
+          echo "DOCKER_TAG=${{ github.sha }}" >> "$GITHUB_ENV"
+
+      - name: SSH to Production Server and Install Docker
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_SSH_HOST }}
+          username: ${{ secrets.EC2_SSH_USER }}
+          key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+          script: |
+            echo "Installing required packages and creating folders"
+            sudo apt-get update
+            sudo apt-get install -y docker.io docker-compose-v2
+            sudo systemctl enable --now docker
+            sudo mkdir -p /home/${{ secrets.EC2_SSH_USER }}/devops
+            sudo chown -R $USER:$USER /home/${{ secrets.EC2_SSH_USER }}/devops
+
+      - name: Copy Docker Compose file
+        uses: appleboy/scp-action@v1
+        with:
+          host: ${{ secrets.EC2_SSH_HOST }}
+          username: ${{ secrets.EC2_SSH_USER }}
+          key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+          source: docker-compose.yml
+          target: ~/devops/
+
+      - name: SSH to Production Server and Deploy
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_SSH_HOST }}
+          username: ${{ secrets.EC2_SSH_USER }}
+          key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+          script: |
+            echo "Starting deployment"
+
+            echo "${{ secrets.DOCKERHUB_TOKEN }}" | sudo docker login \
+              --username "${{ vars.DOCKERHUB_USER }}" \
+              --password-stdin
+
+            cd ~/devops
+
+            export DOCKERHUB_USER="${{ vars.DOCKERHUB_USER }}"
+            export DOCKER_TAG="${{ github.sha }}"
+
+            sudo -E docker compose down
+            sudo -E docker compose pull
+            sudo -E docker compose up -d
+
+            echo "Deployment completed successfully"
